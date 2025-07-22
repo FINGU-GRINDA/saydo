@@ -1,0 +1,142 @@
+scalar DateTime
+scalar JSON
+
+type User {
+  id: ID!
+  email: String!
+  name: String!
+  picture: String
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Meeting {
+  id: ID!
+  userId: ID!
+  title: String!
+  startTime: DateTime
+  endTime: DateTime
+  participants: [String!]!
+  transcript: String
+  summary: String
+  actions: [MeetingAction!]!
+  rawRecordingUrl: String
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type MeetingAction {
+  id: ID!
+  actionType: ActionType!
+  description: String!
+  details: JSON!
+  status: ActionStatus!
+  createdAt: DateTime!
+  executedAt: DateTime
+  meetingId: ID
+  userId: ID
+}
+
+enum ActionType {
+  CALENDAR_EVENT
+  EMAIL
+  SHEET_UPDATE
+  TODO
+  DOC_CREATION
+}
+
+enum ActionStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  EXECUTED
+  FAILED
+}
+
+type AgentCapability {
+  id: ID!
+  name: String!
+  description: String!
+  enabled: Boolean!
+  settings: JSON
+}
+
+type AgentPreferences {
+  userId: ID!
+  capabilities: [AgentCapability!]!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+input MeetingCreateInput {
+  title: String!
+  startTime: DateTime
+  participants: [String!]!
+}
+
+input TranscriptInput {
+  text: String!
+}
+
+input AgentPreferencesUpdateInput {
+  capabilities: [AgentCapabilityInput!]!
+}
+
+input AgentCapabilityInput {
+  id: ID!
+  enabled: Boolean!
+  settings: JSON
+}
+
+type AuthResponse {
+  authorizationUrl: String!
+  state: String!
+}
+
+type ActionExecutionResult {
+  success: Boolean!
+  result: JSON
+  error: String
+  actionId: ID!
+}
+
+type ProcessTranscriptResult {
+  summary: String!
+  actions: [MeetingAction!]!
+}
+
+type Query {
+  # Auth
+  currentUser: User
+  
+  # Meetings
+  meetings(limit: Int = 50): [Meeting!]!
+  meeting(id: ID!): Meeting
+  meetingActions(meetingId: ID!): [MeetingAction!]!
+  
+  # Agent
+  agentPreferences: AgentPreferences!
+  pendingActions: [MeetingAction!]!
+}
+
+type Mutation {
+  # Auth
+  getGoogleAuthUrl: AuthResponse!
+  logout: String!
+  
+  # Meetings
+  createMeeting(input: MeetingCreateInput!): Meeting!
+  processTranscript(meetingId: ID!, input: TranscriptInput!): ProcessTranscriptResult!
+  executeAction(meetingId: ID!, actionId: ID!): ActionExecutionResult!
+  
+  # Agent
+  updateAgentPreferences(input: AgentPreferencesUpdateInput!): AgentPreferences!
+  approveAction(actionId: ID!): String!
+  rejectAction(actionId: ID!): String!
+}
+
+type Subscription {
+  # Real-time updates
+  meetingActionsUpdated(meetingId: ID!): [MeetingAction!]!
+  userMeetingsUpdated: [Meeting!]!
+} 
