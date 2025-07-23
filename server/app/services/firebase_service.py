@@ -20,11 +20,32 @@ class FirebaseService:
         """Initialize Firebase Admin SDK"""
         if not firebase_admin._apps:
             try:
-                # Process the private key to ensure newlines are correctly formatted
-                private_key = settings.firebase_private_key
-                if '\\n' in private_key:
-                    private_key = private_key.replace('\\n', '\n')
+                # Debug the private key format
+                print("Private key format debugging:")
+                print(f"Key type: {type(private_key)}")
+                print(f"Key starts with: {private_key[:20]}")
+                print(f"Key contains \\n: {'\\n' in private_key}")
+                print(f"Key contains \\\\n: {'\\\\n' in private_key}")
                 
+                # Handle various formatting scenarios
+                if "\\n" in private_key or "\\\\n" in private_key:
+                    # Handle double-escaped or single-escaped newlines
+                    private_key = private_key.replace("\\\\n", "\n").replace("\\n", "\n")
+                    print("Replaced escaped newlines")
+                
+                # Ensure the key has the right format (BEGIN/END markers with actual newlines)
+                if not private_key.startswith("-----BEGIN"):
+                    print("Warning: Key doesn't start with -----BEGIN")
+                
+                # Explicitly format the key with proper newlines
+                if not "\n-----END" in private_key:
+                    parts = private_key.split("-----")
+                    if len(parts) >= 3:
+                        # Reconstruct with proper newlines
+                        formatted_key = f"-----{parts[1]}-----\n{parts[2]}\n-----{parts[3]}-----\n"
+                        private_key = formatted_key
+                        print("Reformatted key structure")
+            
                 cred_dict = {
                     "type": "service_account",
                     "project_id": settings.firebase_project_id,
