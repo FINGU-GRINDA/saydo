@@ -47,7 +47,8 @@ export default function RecordMeetingPage() {
 
   // WebSocket for real-time transcription
   const connectWebSocket = (sessionId: string) => {
-    const wsUrl = `ws://localhost:8000/ws/transcription/${sessionId}`
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
+    const wsUrl = `ws://${apiUrl.replace('http://', '')}/ws/transcription/${sessionId}`
     const ws = new WebSocket(wsUrl)
     
     ws.onopen = () => {
@@ -197,7 +198,8 @@ export default function RecordMeetingPage() {
       })
 
       // Connect audio WebSocket for streaming to Deepgram
-      const audioWsUrl = `ws://localhost:8000/ws/meeting/${session.id}/audio`
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
+      const audioWsUrl = `ws://${apiUrl.replace('http://', '')}/ws/meeting/${session.id}/audio`
       const audioWs = new WebSocket(audioWsUrl)
       
       audioWs.onopen = () => {
