@@ -26,8 +26,8 @@ class FirebaseService:
                 print("Private key format debugging:")
                 print(f"Key type: {type(private_key)}")
                 print(f"Key starts with: {private_key[:20]}")
-                print(f"Key contains \\n: {'\\n' in private_key}")
-                print(f"Key contains \\\\n: {'\\\\n' in private_key}")
+                print("Key contains \\n:", "\\n" in private_key)
+                print("Key contains \\\\n:", "\\\\n" in private_key)
                 
                 # Handle various formatting scenarios
                 if "\\n" in private_key or "\\\\n" in private_key:
