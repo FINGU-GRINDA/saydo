@@ -34,6 +34,8 @@ Saydo: ✅ Email sent, ✅ Calendar event created, ✅ Slack notified, ✅ Task 
 
 ### Watch how Magdy and Cuzin's quick sync turned into automated actions in seconds
 
+<img src="assets/saydo.gif" alt="Saydo in Action" width="80%">
+
 [![Demo Video](https://img.shields.io/badge/▶️_Watch_Demo-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/demo-link)
 
 </div>
@@ -68,7 +70,7 @@ All actions pending your one-click approval!
 ### 🤖 **AI Meeting Bot**
 Deploy intelligent bots that join your meetings, understand context, and extract actionable insights.
 
-![AI Bot](https://img.shields.io/badge/Cloud_Based-Bot-blue?style=flat-square)
+<img src="assets/demo-pic1.png" alt="AI Meeting Bot" width="100%">
 
 </td>
 <td width="50%">
@@ -76,7 +78,7 @@ Deploy intelligent bots that join your meetings, understand context, and extract
 ### 🎬 **One-Click Actions**
 Review and execute AI-suggested actions with a single tap. From emails to calendar events.
 
-![Actions](https://img.shields.io/badge/100+_Integrations-Ready-green?style=flat-square)
+<img src="assets/demo-pic2.png" alt="One-Click Actions" width="100%">
 
 </td>
 </tr>
@@ -167,6 +169,10 @@ Powered by **FastAPI** and cutting-edge AI services:
 - Meeting summary generation
 - Task assignment tracking
 
+<div align="center">
+<img src="assets/demo-pic2.png" alt="Team Meeting Features" width="70%">
+</div>
+
 ### 📞 **For Client Calls**
 - CRM updates (coming soon)
 - Proposal generation
@@ -203,6 +209,10 @@ Powered by **FastAPI** and cutting-edge AI services:
 </div>
 
 ## 📊 Real Results from Real Teams
+
+<div align="center">
+<img src="assets/demo-pic1.png" alt="Customer Testimonials" width="70%">
+</div>
 
 > **"We saved 15 hours per week on meeting follow-ups. It's like having a super-efficient assistant who never misses a detail."**  
 > — Sarah Chen, Product Manager
