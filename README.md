@@ -7,7 +7,7 @@
 [![Status](https://img.shields.io/badge/status-beta-yellow.svg?style=for-the-badge)](https://saydo.ai)
 [![Built with Love](https://img.shields.io/badge/built%20with-❤️-red.svg?style=for-the-badge)](https://github.com/saydo-ai/callops)
 
-### 🎯 ** Not Just Another Voice Assistant - The First AI That Takes Real Actions**
+### 🎯 ** Say it. Saydo it!**
 
 *Say: "Send the report to the team and schedule a review for tomorrow"
 Saydo: ✅ Email sent, ✅ Calendar event created, ✅ Slack notified, ✅ Task added*
@@ -26,7 +26,7 @@ Saydo: ✅ Email sent, ✅ Calendar event created, ✅ Slack notified, ✅ Task 
 - **📊 Learn & improve** from every conversation to better understand your workflow
 - **🚀 Scale infinitely** without hiring a single administrative assistant
 
-**That's Saydo CallOps.** Not just another transcription tool—it's your first AI employee.
+**That's Saydo.** Not just another transcription tool—it's your first AI employee.
 
 ## 🎥 See It In Action
 
