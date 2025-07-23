@@ -22,7 +22,7 @@ def setup_demo_account():
             "type": "service_account",
             "project_id": settings.firebase_project_id,
             "private_key_id": settings.firebase_private_key_id,
-            "private_key": settings.firebase_private_key.replace('\\n', '\n'),
+            "private_key": settings.firebase_private_key,
             "client_email": settings.firebase_client_email,
             "client_id": settings.firebase_client_id,
             "auth_uri": settings.firebase_auth_uri,
