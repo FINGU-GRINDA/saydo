@@ -18,23 +18,30 @@ def setup_demo_account():
     
     # Initialize Firebase Admin SDK
     if not firebase_admin._apps:
-        cred_dict = {
-            "type": "service_account",
-            "project_id": settings.firebase_project_id,
-            "private_key_id": settings.firebase_private_key_id,
-            "private_key": settings.firebase_private_key,
-            "client_email": settings.firebase_client_email,
-            "client_id": settings.firebase_client_id,
-            "auth_uri": settings.firebase_auth_uri,
-            "token_uri": settings.firebase_token_uri,
-            "auth_provider_x509_cert_url": settings.firebase_auth_provider_cert_url,
-            "client_x509_cert_url": settings.firebase_client_cert_url
-        }
-        
-        cred = credentials.Certificate(cred_dict)
-        firebase_admin.initialize_app(cred)
+        try:
+            # Process the private key to ensure newlines are correctly formatted
+            private_key = settings.firebase_private_key
+            if '\\n' in private_key:
+                private_key = private_key.replace('\\n', '\n')
+            cred_dict = {
+                "type": "service_account",
+                "project_id": settings.firebase_project_id,
+                "private_key_id": settings.firebase_private_key_id,
+                "private_key": settings.firebase_private_key,
+                "client_email": settings.firebase_client_email,
+                "client_id": settings.firebase_client_id,
+                "auth_uri": settings.firebase_auth_uri,
+                "token_uri": settings.firebase_token_uri,
+                "auth_provider_x509_cert_url": settings.firebase_auth_provider_cert_url,
+                "client_x509_cert_url": settings.firebase_client_cert_url
+            }
+            
+            cred = credentials.Certificate(cred_dict)
+            firebase_admin.initialize_app(cred)
+        except Exception as e:
+            print(f"Error initializing Firebase Admin SDK: {e}")
     
-    db = firestore.client()
+    self._db = firestore.client()
     
     # Demo user data
     demo_user_id = "demo-user-123"
