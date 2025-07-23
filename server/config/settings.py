@@ -44,9 +44,13 @@ class Settings(BaseSettings):
     
     # Redis (optional)
     redis_url: str = "redis://localhost:6379"
+
     
     class Config:
         env_file = ".env"
+        extra = "allow"
+        env_file_encoding = "utf-8"
+        case_sensitive = False  # Allow case-insensitive environment variable names
 
 
 settings = Settings()
