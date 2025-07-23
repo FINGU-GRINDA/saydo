@@ -20,6 +20,8 @@ class FirebaseService:
         """Initialize Firebase Admin SDK"""
         if not firebase_admin._apps:
             try:
+                private_key = settings.firebase_private_key
+
                 # Debug the private key format
                 print("Private key format debugging:")
                 print(f"Key type: {type(private_key)}")
