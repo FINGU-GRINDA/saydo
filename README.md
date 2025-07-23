@@ -7,9 +7,10 @@
 [![Status](https://img.shields.io/badge/status-beta-yellow.svg?style=for-the-badge)](https://saydo.ai)
 [![Built with Love](https://img.shields.io/badge/built%20with-❤️-red.svg?style=for-the-badge)](https://github.com/saydo-ai/callops)
 
-### 🎯 **Turn Every Meeting into Automated Action**
+### 🎯 ** Not Just Another Voice Assistant - The First AI That Takes Real Actions**
 
-*While others help you transcribe meetings, Saydo CallOps creates AI employees that join meetings AND complete the follow-up work—automatically.*
+*Say: "Send the report to the team and schedule a review for tomorrow"
+Saydo: ✅ Email sent, ✅ Calendar event created, ✅ Slack notified, ✅ Task added*
 
 [Live Demo](https://demo.saydo.ai) | [Documentation](https://docs.saydo.ai) | [Join Our Community](https://discord.gg/saydo)
 
@@ -51,14 +52,14 @@ Saydo AI Generated:
 All actions pending your one-click approval!
 ```
 
-## 🌟 Why Saydo CallOps Changes Everything
+## 🌟 Why Saydo Changes Everything
 
 ### 🎯 **The Problem**
 - **73% of professionals** spend 2+ hours weekly on meeting follow-ups
 - **$37 billion** lost annually due to inefficient meeting management
 - Current solutions stop at transcription or require complex integrations
 
-### 💡 **Our Solution: Complete Meeting-to-Action Automation**
+### 💡 **Our Solution: Complete Voice-to-Action AI Agent**
 
 <table>
 <tr>
@@ -274,7 +275,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-Built with ❤️ by the Saydo team and amazing contributors worldwide.
+Built with ❤️ by the RINDA team and amazing contributors worldwide.
 
 Special thanks to:
 - Recall.ai for enterprise-grade meeting bot infrastructure
