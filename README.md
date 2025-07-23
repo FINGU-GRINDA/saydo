@@ -1,4 +1,4 @@
-# 🚀 Saydo CallOps - The World's First Meeting-to-Action AI Platform
+# 🚀 Saydo - The World's First Voice-to-Action AI Agent
 
 <div align="center">
 
