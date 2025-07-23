@@ -359,7 +359,7 @@ export default function RecordMeetingPage() {
             <ArrowLeft className="h-6 w-6" />
           </Link>
           <div>
-            <h1 className="text-3xl font-bold text-gray-900">Google Meet AI Bot</h1>
+            <h1 className="text-3xl font-bold text-gray-900">Saydo in Google Meet</h1>
             <p className="text-gray-600">Join meetings and automate follow-ups</p>
           </div>
         </div>

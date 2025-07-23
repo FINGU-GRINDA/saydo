@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Phone, Users, ChevronRight, MessageSquare, MousePointerClick } from "lucide-react"
 import type { HistoryItem } from "@/lib/types"
+import ReactMarkdown from "react-markdown"
 
 function formatRelativeTime(date: Date) {
   const now = new Date()
@@ -45,7 +46,9 @@ export function CallLogItem({ item }: { item: HistoryItem }) {
       <div className="bg-white border border-gray-200 rounded-xl p-4 space-y-4 hover:bg-gray-50 hover:border-gray-300 transition-all cursor-pointer shadow-sm">
         <div className="flex items-start gap-3">
           <MessageSquare className="w-4 h-4 text-gray-400 mt-1 flex-shrink-0" />
-          <p className="text-sm text-gray-600">{item.summary}</p>
+          <div className="text-sm text-gray-600">
+            <ReactMarkdown>{item.summary}</ReactMarkdown>
+          </div>
         </div>
         <div className="flex items-center justify-between pt-3 border-t border-gray-100">
           <div className="flex items-center gap-3">

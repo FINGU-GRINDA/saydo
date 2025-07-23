@@ -1,12 +1,13 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, Suspense } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { apiClient } from '@/lib/api-client'
 import { useAuth } from '@/lib/contexts/auth-context'
 import { Loader2, CheckCircle, AlertCircle } from 'lucide-react'
 
-export default function AuthCallbackPage() {
+// This component uses useSearchParams which requires Suspense in Next.js 15
+function AuthCallbackContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const { user } = useAuth()
@@ -110,4 +111,23 @@ export default function AuthCallbackPage() {
       </div>
     </div>
   )
-} 
+}
+
+// Export the default component that wraps the content with Suspense
+export default function AuthCallbackPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center max-w-md mx-auto p-6">
+          <div className="mb-4 flex justify-center">
+            <Loader2 className="h-8 w-8 animate-spin text-blue-600" />
+          </div>
+          <h1 className="text-xl font-semibold mb-2">Loading...</h1>
+          <p className="text-blue-600 mb-4">Please wait while we process your authentication...</p>
+        </div>
+      </div>
+    }>
+      <AuthCallbackContent />
+    </Suspense>
+  )
+}
