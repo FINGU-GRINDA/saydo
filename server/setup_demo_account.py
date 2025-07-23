@@ -27,7 +27,7 @@ def setup_demo_account():
                 "type": "service_account",
                 "project_id": settings.firebase_project_id,
                 "private_key_id": settings.firebase_private_key_id,
-                "private_key": settings.firebase_private_key,
+                "private_key": private_key,
                 "client_email": settings.firebase_client_email,
                 "client_id": settings.firebase_client_id,
                 "auth_uri": settings.firebase_auth_uri,
@@ -41,7 +41,7 @@ def setup_demo_account():
         except Exception as e:
             print(f"Error initializing Firebase Admin SDK: {e}")
     
-    self._db = firestore.client()
+    db = firestore.client()
     
     # Demo user data
     demo_user_id = "demo-user-123"
