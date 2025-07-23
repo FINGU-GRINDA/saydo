@@ -1,4 +1,4 @@
-# 🚀 Saydo - The World's First Voice-to-Action AI Agent
+# Saydo - The World's First Voice-to-Action AI Agent
 
 <div align="center">
 
@@ -7,7 +7,7 @@
 [![Status](https://img.shields.io/badge/status-beta-yellow.svg?style=for-the-badge)](https://saydo.ai)
 [![Built with Love](https://img.shields.io/badge/built%20with-❤️-red.svg?style=for-the-badge)](https://github.com/saydo-ai/callops)
 
-### 🎯 ** Say it. Saydo it!**
+### 🎯 Say it. Saydo it.
 
 *Say: "Send the report to the team and schedule a review for tomorrow"
 Saydo: ✅ Email sent, ✅ Calendar event created, ✅ Slack notified, ✅ Task added*
